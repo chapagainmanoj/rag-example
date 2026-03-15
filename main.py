@@ -2,6 +2,7 @@ import os
 import argparse
 
 from dotenv import load_dotenv
+
 load_dotenv()
 
 
@@ -10,6 +11,7 @@ from rag.vectorstores.chroma import ChromaVectorStore
 from rag.vectorstores.pinecone import PineconeVectorStore
 from rag.llms.openai_llm import OpenAILLM
 from rag.llms.ollama_llm import OllamaLLM
+from rag.llms.anthropic_llm import AnthropicLLM
 from rag.loader import load_and_chunk
 
 PDF_PATH = os.environ.get("PDF_PATH")
@@ -22,6 +24,7 @@ VECTORSTORE_MAP = {
 LLM_MAP = {
     "openai": OpenAILLM,
     "ollama": OllamaLLM,
+    "anthropic": AnthropicLLM,
 }
 
 
